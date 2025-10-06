@@ -17,5 +17,82 @@
         </p>
       </div>
     </div>
+
+    <div class="main-section">
+      <div class="row-1">
+        <div class="">
+          <img src="./images/menu.png" alt="" class="img-hamburger" />
+          <p>Initial array</p>
+        </div>
+        <p>Numbers used in examples</p>
+      </div>
+      <div class="row-2">
+        <p>[1, 2, 3, 4, 5]</p>
+      </div>
+      <div class="row-3">
+        <button onclick="showMap()" class="function-wrapper">
+          <img src="./images/next.png" alt="" class="icon" />
+          <p>Show map()</p>
+        </button>
+
+        <button onclick="showFilter()" class="function-wrapper">
+          <img src="./images/filter.png" alt="" class="icon" />
+          <p>Show filter()</p>
+        </button>
+
+        <button onclick="showReduce()" class="function-wrapper">
+          <img src="./images/sigma.png" alt="" class="icon" />
+          <p>Show reduce()</p>
+        </button>
+
+        <button onclick="showForEach()" class="function-wrapper">
+          <img src="./images/app.png" alt="" class="icon" />
+          <p>Show forEach()</p>
+        </button>
+      </div>
+    </div>
+    <!-- <p>Numbers: [1, 2, 3, 4, 5]</p> -->
+
+    <script>
+      const numbers = [1, 2, 3, 4, 5];
+      const output = document.getElementById("output");
+
+      const showMap = () => {
+        const doubled = numbers.map((num) => num * 2);
+        output.innerHTML = `
+        <p><b>map()</b>: ${doubled}</p>
+        <p><i>map() creates a new array by applying a function to each element. 
+        Here, each number was doubled.</i></p>
+      `;
+      };
+
+      const showFilter = () => {
+        const evens = numbers.filter((num) => num % 2 === 0);
+        output.innerHTML = `
+        <p><b>filter()</b>: ${evens}</p>
+        <p><i>filter() creates a new array with only the elements that pass a condition. 
+        Here, only even numbers were kept.</i></p>
+      `;
+      };
+
+      const showReduce = () => {
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        output.innerHTML = `
+        <p><b>reduce()</b>: ${sum}</p>
+        <p><i>reduce() processes the array to a single value. 
+        Here, all numbers were added together to get the sum.</i></p>
+      `;
+      };
+
+      const showForEach = () => {
+        let list = "";
+        numbers.forEach((num) => (list += num + " "));
+        output.innerHTML = `
+        <p><b>forEach()</b>: ${list}</p>
+        <p><i>forEach() executes a function for each array element. 
+        Here, we simply displayed each number in order.</i></p>
+      `;
+      };
+    </script>
   </body>
 </html>
